@@ -3,27 +3,99 @@
   
 <head>
     <meta charset="UTF-8">
-    <title> Moja strona jdrab </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Julia Drab - Twórczość </title>
+    
+    <style> /* ostylowanie całej przestrzeni strony */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 40px 20px;        /* odstępy od krawędzi ekranu (góra/dół, boki) */
+            margin: 0;
+        }
 
-<style>
-  body{
-    background-color: #121212;
-    color: #ffffff;
-    font-family: 
-    text-align: center;
-    padding-top: 50px;
-  }
+        /* główny nagłówek (tytuł strony) */
+        h1 {
+            color: #4caf50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
 
-  h1{
-    color: #4caf50;
-  }
-</style>
+        /* Podtytuł strony */
+        .sub {
+            color: #aaaaaa;
+            font-style: italic;        /* kursywa */
+            margin-bottom: 40px;
+        }
+
+        /* kontener, kafelki w jednej siatce */
+        .grid-tworczosci {
+            display: flex;             /* elastyczny układ elementów */
+            flex-wrap: wrap;           /* jeśli kafelki nie mieszczą się w jednej linii, przejdą do następnej */
+            justify-content: center;   /* środkowanie kafelków */
+            gap: 20px;                 /* odstępy pomiędzy kafelkami */
+            max-width: 1000px;         /* maksymalna szerokość całej sekcji na dużych ekranach */
+            margin: 0 auto;            /* wyśrodkowanie całej siatki na komputerze */
+        }
+
+        /* wygląd pojedynczego kafelka z pasją */
+        .kafelek {
+            background-color: #1e1e1e;
+            border: 1px solid #333333; /* ramka wokół kafelka */
+            border-radius: 12px;       /* zaokrąglone rogi */
+            padding: 25px;             /* przestrzeń wewnątrz kafelka, żeby tekst nie dotykał brzegów */
+            width: 280px;              /* stała szerokość kafelka */
+            transition: 0.3s ease;     /* płynne animowanie efektu najechania myszką */
+        }
+
+        /* efekt najechania myszką na kafelek */
+        .kafelek:hover {
+            transform: translateY(-5px); /* kafelek delikatnie unosi się do góry */
+            border-color: #4caf50;       /* ramka zmienia kolor na zielony */
+            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2); /* zielonkawy blask pod spodem */
+        }
+
+        /* tytuły wewnątrz kafelków */
+        .kafelek h3 {
+            color: #4caf50;
+            margin-top: 0;
+        }
+    </style>
   
 </head>
 
+  
 <body>
-  <h1> Sukces! </h1>
-  <p> Hejka </p>
-</body>
 
+    <h1> Przestrzeń Twórcza Julii Drab </h1>
+    <p class="sub"> Wiersze, fotografia, grafika i inne pasje zebrane w jednym miejscu! </p>
+
+    <div class="grid-tworczosci">
+
+        <div class="kafelek">
+            <h3>✒ Poezja </h3>
+            <p> Moje autorskie wiersze </p>
+        </div>
+
+        <div class="kafelek">
+            <h3>📃 Teksty </h3>
+            <p> Zapisane przemyślenia i analiza różnych tematów </p>
+        </div>
+
+        <div class="kafelek">
+            <h3>📷 Fotografia</h3>
+            <p> Patrząc okiem obiektywu </p>
+        </div>
+
+        <div class="kafelek">
+            <h3>💻 Grafika</h3>
+            <p> Pierwsze kroki w grafice wektorowej </p>
+        </div>
+
+    </div>
+
+</body>
+  
 </html>
