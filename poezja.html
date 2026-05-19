@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poezja | Julia Drab</title>
+    <style>
+        body {
+            background-color: #0b132b; /* Głęboki granat */
+            color: #ffffff;
+            font-family: 'Georgia', serif; /* Zmieniamy czcionkę na szeryfową, iście książkową */
+            padding: 40px 20px;
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        .tomik-kontener {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Przycisk powrotu */
+        .wroc-btn {
+            display: inline-block;
+            color: #8da9c4;
+            text-decoration: none;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            transition: 0.3s;
+        }
+        .wroc-btn:hover {
+            color: #4cc9f0;
+        }
+
+        h1 {
+            color: #4cc9f0;
+            font-size: 2.5rem;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            margin-bottom: 10px;
+        }
+
+        .motto {
+            text-align: center;
+            color: #8da9c4;
+            font-style: italic;
+            margin-bottom: 50px;
+            font-family: 'Georgia', serif;
+        }
+
+        /* --- STYLIZACJA SPISU TREŚCI (JAK W KSIĄŻCE) --- */
+        .spis-tresci {
+            background-color: #1c2541;
+            border: 1px solid #3a506b;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 60px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .spis-tresci h2 {
+            color: #4cc9f0;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #3a506b;
+            padding-bottom: 10px;
+        }
+
+        .kategoria-sekcja {
+            margin-top: 25px;
+        }
+
+        .kategoria-tytul {
+            color: #8da9c4;
+            font-weight: bold;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .spis-tresci ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .spis-tresci li {
+            margin-bottom: 8px;
+        }
+
+        .spis-tresci a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .spis-tresci a:hover {
+            color: #4cc9f0;
+            transform: translateX(5px); /* Delikatne przesunięcie w prawo po najechaniu */
+        }
+
+        /* --- STYLIZACJA BLOKÓW Z WIERSZAMI --- */
+        .wiersz-strona {
+            background-color: #1c2541;
+            border: 1px solid #3a506b;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            /* Delikatna animacja wejścia, by przypominało kartkę */
+        }
+
+        .wiersz-naglowek {
+            color: #4cc9f0;
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-family: 'Georgia', serif;
+            border-bottom: 1px dashed #3a506b;
+            padding-bottom: 10px;
+        }
+
+        .wiersz-kat-znacznik {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.75rem;
+            color: #8da9c4;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 25px;
+        }
+
+        .wiersz-tresc {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            white-space: pre-line; /* Magiczna funkcja: zachowuje entery z kodu bez pisania <br>! */
+        }
+
+        .separator {
+            text-align: center;
+            color: #3a506b;
+            margin: 40px 0;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tomik-kontener">
+        
+        <a href="index.html" class="wroc-btn">← Wróć do strony głównej</a>
+
+        <h1>Archiwum Poezji</h1>
+        <div class="motto">„To, czego nie umiem powiedzieć”</div>
+
+        <div class="spis-tresci">
+            <h2>Spis Treści</h2>
+            
+            <div class="kategoria-sekcja">
+                <div class="kategoria-tytul">I. Relacje</div>
+                <ul>
+                    <li><a href="#nie-dopije">„Nikt nie dopije jej za mnie”</a></li>
+                    <li><a href="#brak-slow">„Brak słów”</a></li>
+                    <li><a href="#tesknie">„Tęsknię”</a></li>
+                    <li><a href="#wystarczalnosc">„Wystarczalność”</a></li>
+                    <li><a href="#na-recepte">„Na receptę”</a></li>
+                    <li><a href="#glod">„Głód”</a></li>
+                    <li><a href="#cena">„Cena”</a></li>
+                </ul>
+            </div>
+
+            <div class="kategoria-sekcja">
+                <div class="kategoria-tytul">II. Tożsamość</div>
+                <ul>
+                    <li><a href="#szklana">„Szklana tożsamość”</a></li>
+                    <li><a href="#pomaluj">„Pomaluj mnie”</a></li>
+                    <li><a href="#specyficzna">„Specyficzna”</a></li>
+                    <li><a href="#morderca">„Morderca”</a></li>
+                    <li><a href="#wiersz">„Wiersz”</a></li>
+                </ul>
+            </div>
+
+            <div class="kategoria-sekcja">
+                <div class="kategoria-tytul">III. Emocje</div>
+                <ul>
+                    <li><a href="#instrukcja">„Instrukcja”</a></li>
+                    <li><a href="#pozyczka">„Pożyczka”</a></li>
+                    <li><a href="#przylapana">„Przyłapana”</a></li>
+                    <li><a href="#atencjuszka">„Atencjuszka”</a></li>
+                    <li><a href="#amnezja">„Biała amnezja”</a></li>
+                    <li><a href="#rachunek">„Rachunek sumienia”</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="separator">✦ ✦ ✦</div>
+
+        <div class="wiersz-strona" id="nie-dopije">
+            <h2 class="wiersz-naglowek">Nikt nie dopije jej za mnie</h2>
+            <span class="wiersz-kat-znacznik">Relacje</span>
+            <div class="wiersz-tresc">Nic nie smakuje tak dobrze
+            jak kawa zrobiona przez kogoś,
+            kto nie pyta o cukier -
+            bo i tak zna odpowiedź.
+
+            Ale trzeba pozwolić,
+            żeby ktoś ją zrobił.
+            By lekko oparzyło.
+            Pozwolić sobie na choć jeden łyk,
+            zanim się zniknie.
+
+            A to już jest ryzyko,
+            na które nie zawsze mnie stać.
+            Które wymaga odwagi większej
+            niż uderzenie
+            kofeiny.
+
+            Stawiasz kubek za blisko krawędzi,
+            jakby testując
+            gorzkie granice -
+            nie porcelany.
+
+            Byłaś powiernikiem, ciszą,
+            która nie brzmiała jak wyrok.
+            Ostatnią, bezbronną nadzieją
+            uwięzioną w dziecięcym spojrzeniu.
+
+            Twoja obecność
+            nie krzyczała,
+            nie ratowała wprost,
+            po prostu była.
+
+            I to wystarczało,
+            żeby na chwilę nie spaść,
+            lecz wylądować miękko
+            na pragnieniu ocalenia.
+
+            By poczuć, że się żyje,
+            kiedy w środku wszystko
+            zamknięte na cztery spusty,
+            a klucz zgubiony
+            między „jutrem” a „metą”.
+
+            Szybko przestało wystarczać.
+            Wszystko znowu było nie do zniesienia.
+            Kolejna krawędź okazała się
+            tylko szarym fragmentem chodnika.
+
+            Cykl trwa.
+            Więc idę dalej -
+            nie wiedząc czy to ulga,
+            czy rozczarowanie.
+            Z przyzwyczajenia,
+            jakby to miało znaczenie.
+
+            A kawa stygnie szybciej,
+            niż powinny stygnąć rzeczy ważne.
+            I chociaż jeszcze parzy w usta,
+            już wiem.
+            Nikt nie dopije jej za mnie.</div>
+        </div>
+
+        <div class="wiersz-strona" id="brak-slow">
+            <h2 class="wiersz-naglowek">Brak słów</h2>
+            <span class="wiersz-kat-znacznik">Relacje</span>
+            <div class="wiersz-tresc">Brak odmowy
+            nie jest zgodą.
+            Brak słów
+            jest odpowiedzią.
+
+            Zanim zdążę zrozumieć,
+            już wiem, że mam się zmniejszyć.
+            Przepraszam więc wcześniej:
+            za ton, którego nie użyłam,
+            za słowa, których jeszcze nie wypowiedziałam.
+
+            Czasem próbuję mówić dalej,
+            ale głos nie przechodzi przez gardło,
+            jakby ciało uznało,
+            że to nie jest bezpieczne miejsce na dźwięk.
+            Potem już tylko układam usta.
+
+            Milczysz, a ja błagam, pękam,
+            pragnąc choćby szeptu, krzty miłości.
+            Więc obejmuję się sama,
+            gestem kruchym,
+            jak uścisk motyla.
+            Na moment mniej boli.
+
+            Czym jest brak słów?
+            Końcem?
+            Czy trwaniem?</div>
+        </div>
+
+        <div class="wiersz-strona" id="tesknie">
+            <h2 class="wiersz-naglowek">Tęsknię</h2>
+            <span class="wiersz-kat-znacznik">Relacje</span>
+            <div class="wiersz-tresc">Tęsknię.
+            Tak bardzo, że pojawia się strach,
+            że już Cię nie zobaczę,
+            że zostanę bez Ciebie,
+            że nie zdążę Ci powiedzieć,
+            jak bije moje serce,
+            zanim Twoje przestanie.
+
+            Nawet nie mam kogo spytać,
+            czy wrócisz -
+            jakby troska nie miała praw.
+
+            Boli mnie ta myśl,
+            że bez ciebie jestem
+            niczym
+            pęknięty balon.
+            Bezużyteczna, pomięta, dziurawa.
+            Pusta
+            jak skasowana wiadomość,
+            jej wysłanie było za trudne.
+
+            Przez całą mszę
+            próbowałam myśleć o Bogu.
+            Nie wiedziałam,
+            czy jeszcze się modlę,
+            czy grzeszę,
+            skoro podczas pieśni
+            śpiewałam wyłącznie o Tobie.
+
+            Tęsknię tak,
+            jak gdyby mój organizm
+            nie uznawał innych ludzi.
+            Tylko za Tobą tęsknię.
+
+            Proszę, wróć.</div>
+        </div>
+
+        <div class="wiersz-strona" id="wystarczalnosc">
+            <h2 class="wiersz-naglowek">Wystarczalność</h2>
+            <span class="wiersz-kat-znacznik">Relacje</span>
+            <div class="wiersz-tresc">W tym dziwnym spokoju,
+            nie muszę żebrać o uwagę.
+            Słuchasz mnie.
+            Zwłaszcza, gdy milknę zbyt długo.
+
+            Czekasz.
+            Zdania we mnie piszą się wolniej.
+            Niezwykła jest
+            ta chwila zrozumienia,
+            która nie pyta o dowody,
+            nie żąda certyfikatów istnienia.
+
+            Po raz pierwszy.
+            Bez potrzeby kreślenia błędów
+            na skórze,
+            bez korekty tonu, gestu, oddechu.
+            Z ust płyną najtrudniejsze dźwięki.
+
+            Pojawia się uśmiech.
+
+            I nagle
+            uparta chęć nieistnienia
+            traci grunt,
+            zostaje coś dziwnie prostego:
+            że mogę być
+            i to nareszcie wystarcza.</div>
+        </div>
+
+        <div class="wiersz-strona" id="na-recepte">
+            <h2 class="wiersz-naglowek">Na receptę</h2>
+            <span class="wiersz-kat-znacznik">Relacje</span>
+            <div class="wiersz-tresc">Jesteś moją ulubioną trucizną.
+            Receptą, której nikt mi nie wypisał.
+            Moim prywatnym przedawkowaniem.
+
+            Wciąż tańczę w chłodzie twego rytmu,
+            Między ratunkiem a całkowitym zniszczeniem.
+            Zapisana białą kredą na tablicy moich lęków,
+            Zawsze o dzwonek za blisko, o spojrzenie za daleko.
+
+            Proszę, nie lecz mnie z tego uzależnienia.
+            W pierwszych ławkach milczenia wolę
+            Dusić się i znikać.</div>
+        </div>
+
+        <div class="wiersz-strona" id="glod">
+            <h2 class="wiersz-naglowek">Głód</h2>
+            <span class="wiersz-kat-znacznik">Relacje</span>
+            <div class="wiersz-tresc">Choć byłeś tylko przez chwilę,
+            Został ślad po tobie w sercu.
+            Na obojętność się silę,
+            Bo nie widzę w tym sensu.
+
+            Jednak ciągle coś mnie kłuje
+            o uwagę dusza prosi,
+            Bo wspomnienia przywołuje.
+            Chociaż jego już nie znosi.</div>
+        </div>
+
+        <div class="wiersz-strona" id="cena">
+            <h2 class="wiersz-naglowek">Cena</h2>
+            <span class="wiersz-kat-znacznik">Relacje</span>
+            <div class="wiersz-tresc">Wystawiłam najwyższą stawkę -
+            na stół, między brudne gary.
+            Lśniła chłodno,
+            obiecując rychły spokój.
+
+            Sądziłam, że to moment,
+            w którym wstrzymasz oddech.
+            Lecz moja ostateczność
+            okazała się zbyt tania,
+            by kupić choćby sekundę
+            twojego lęku.
+
+            Usłyszałam, że nie ma waluty współczucia,
+            a cierpienie - kursu wymiany na uwagę.
+
+            Więc wycofałam się,
+            by wyznaczyć środek ciężkości
+            wszystkich trujących słów.
+
+            Bo właśnie wręczono mi wilczy bilet.
+            Za darmo.
+            Z wścieklizną mówiącą,
+            że dla wilków
+            wystarczajaco chory
+            jest człowiek martwy.
+            Nieopłacony.</div>
+        </div>
+
+        </div>
+
+</body>
+</html>
