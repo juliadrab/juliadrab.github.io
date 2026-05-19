@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafika | Julia Drab</title>
+    <style>
+        body {
+            background-color: #0b132b;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 30px 15px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .wroc-btn {
+            display: inline-block;
+            color: #8da9c4;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #4cc9f0;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .grafika-kontener {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Blok pojedynczej grafiki */
+        .grafika-karta {
+            background-color: #1c2541;
+            border: 1px solid #3a506b;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .grafika-karta img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Opis pod grafiką */
+        .grafika-info {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .grafika-tytul {
+            color: #4cc9f0;
+            font-size: 1.2rem;
+            margin: 0 0 8px 0;
+            font-weight: 600;
+        }
+
+        .grafika-opis {
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="wroc-btn">← Wróć do strony głównej</a>
+    <h1>Prace Graficzne</h1>
+
+    <div class="grafika-kontener">
+
+        <div class="grafika-karta">
+            <img src="https://picsum.photos/800/500?random=11" alt="Grafika 1">
+            <div class="grafika-info">
+                <h3 class="grafika-tytul">Geometria Przestrzeni</h3>
+                <p class="grafika-opis">Moje pierwsze kroki w grafice wektorowej. Zabawa wektorami, liniami i głębią ciemnych tonów.</p>
+            </div>
+        </div>
+
+        <div class="grafika-karta">
+            <img src="https://picsum.photos/800/600?random=12" alt="Grafika 2">
+            <div class="grafika-info">
+                <h3 class="grafika-tytul">Abstrakcja Emocjonalna</h3>
+                <p class="grafika-opis">Próba przelania skomplikowanych myśli na język prostych form i kontrastujących kolorów.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
