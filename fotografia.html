@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografia | Julia Drab</title>
+    <style>
+        body {
+            background-color: #0b132b; /* Twój głęboki granat */
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .galeria-kontener {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Przycisk powrotu */
+        .wroc-btn {
+            display: inline-block;
+            color: #8da9c4;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            transition: 0.3s;
+        }
+        .wroc-btn:hover {
+            color: #4cc9f0;
+        }
+
+        h1 {
+            color: #4cc9f0;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .motto {
+            text-align: center;
+            color: #8da9c4;
+            font-style: italic;
+            margin-bottom: 50px;
+        }
+
+        /* --- BLOK POJEDYNCZEJ WYSTAWY --- */
+        .wystawa-blok {
+            background-color: #1c2541;
+            border: 1px solid #3a506b;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .wystawa-tytul {
+            color: #4cc9f0;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .wystawa-opis {
+            color: #8da9c4;
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        /* Ta klasa tworzy magię: poziomy pasek, który można przewijać palcem na telefonie */
+        .wystawa-zdjecia {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto; /* Pozwala na przewijanie w bok */
+            padding-bottom: 15px;
+            /* Poniższe linijki sprawiają, że pasek przewijania wygląda ładniej i płynniej na telefonach */
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Styl pojedynczego zdjęcia wewnątrz wystawy */
+        .wystawa-zdjecia img {
+            height: 250px; /* Wszystkie zdjęcia będą miały tę samą wysokość */
+            width: auto;   /* Szerokość dopasuje się sama, żeby nie popsuć proporcji zdjęcia */
+            border-radius: 8px;
+            object-fit: cover;
+            scroll-snap-align: start;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: 0.3s ease;
+        }
+
+        /* Delikatny efekt po dotknięciu/najechaniu na zdjęcie */
+        .wystawa-zdjecia img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Stylizacja paska przewijania, żeby pasował do granatu strony */
+        .wystawa-zdjecia::-webkit-scrollbar {
+            height: 6px;
+        }
+        .wystawa-zdjecia::-webkit-scrollbar-thumb {
+            background-color: #3a506b;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="galeria-kontener">
+        
+        <a href="index.html" class="wroc-btn">← Wróć do strony głównej</a>
+
+        <h1>Galeria Fotografii</h1>
+        <div class="motto">„Zatrzymane w kadrze – moje cyfrowe wystawy”</div>
+
+        <div class="wystawa-blok">
+            <h2 class="wystawa-tytul">I. Cienie codzienności</h2>
+            <div class="wystawa-opis">Ulotne momenty, gra światła i geometrii złapana w pośpiechu dnia.</div>
+            
+            <div class="wystawa-zdjecia">
+                <img src="https://picsum.photos/400/600?random=1" alt="Zdjecie 1">
+                <img src="https://picsum.photos/500/600?random=2" alt="Zdjecie 2">
+                <img src="https://picsum.photos/350/600?random=3" alt="Zdjecie 3">
+                <img src="https://picsum.photos/450/600?random=4" alt="Zdjecie 4">
+            </div>
+        </div>
+
+        <div class="wystawa-blok">
+            <h2 class="wystawa-tytul">II. Melancholia natury</h2>
+            <div class="wystawa-opis">Gdy świat zwalnia, a przyroda zaczyna mówić szeptem.</div>
+            
+            <div class="wystawa-zdjecia">
+                <img src="https://picsum.photos/600/400?random=5" alt="Zdjecie 5">
+                <img src="https://picsum.photos/400/400?random=6" alt="Zdjecie 6">
+                <img src="https://picsum.photos/450/400?random=7" alt="Zdjecie 7">
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
