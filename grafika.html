@@ -38,24 +38,27 @@
         }
 
         .grafika-kontener {
-            max-width: 650px;
-            margin: 0 auto;
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
         }
 
         /* Blok pojedynczej grafiki */
         .grafika-karta {
-            background-color: #1c2541;
-            border: 1px solid #3a506b;
-            border-radius: 14px;
-            overflow: hidden;
-            margin-bottom: 40px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        background-color: #1c2541;
+        border: 1px solid #3a506b;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
         .grafika-karta img {
-            width: 100%;
-            height: auto;
-            display: block;
+        width: 100%;
+        aspect-ratio: 1 / 1;   /* kwadrat; możesz dać np. 4 / 5 */
+        object-fit: cover;     /* przycina zamiast rozciągać */
+        display: block;
         }
 
         /* Opis pod grafiką */
